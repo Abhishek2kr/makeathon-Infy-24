@@ -1,0 +1,17 @@
+<div class="dropzone" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (click)="fileInput.click()">
+    Drag & Drop files here or click to upload
+  </div>
+  <input type="file" #fileInput multiple (change)="onFileSelected($event)" style="display: none;">
+  <ul class="file-list">
+    <li *ngFor="let file of files; let i = index">
+      {{ file.name }}
+      <img [src]="file.preview" *ngIf="file.preview" width="50" height="50">
+      <button (click)="removeFile(i)">Remove</button>
+    </li>
+  </ul>
+  
+  <select [(ngModel)]="selectedOption">
+    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+  </select>
+  <button (click)="processFiles()">Process</button>
+  

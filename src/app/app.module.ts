@@ -8,6 +8,9 @@ import { ExtractTemplateComponent } from './components/extract-template/extract-
 import { TrainModelComponent } from './components/train-model/train-model.component';
 import { MainComponent } from './components/main/main.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -17,13 +20,15 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
         ExtractTemplateComponent,
         TrainModelComponent,
         MainComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        FileUploadComponent
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule
     ],
-    providers: [],
+    providers: [provideHttpClient()],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

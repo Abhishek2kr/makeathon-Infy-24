@@ -1,17 +1,47 @@
-<div class="dropzone" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (click)="fileInput.click()">
-    Drag & Drop files here or click to upload
+<div class="container">
+  <!-- File upload dropzone -->
+  <div class="box has-text-centered dropzone" (drop)="onDrop($event)" (dragover)="onDragOver($event)"
+    (click)="fileInput.click()">
+    <div class="content">
+      <p class="is-size-5">Drag & Drop files here or click to upload</p>
+    </div>
   </div>
   <input type="file" #fileInput multiple (change)="onFileSelected($event)" style="display: none;">
+
+  <!-- Progress bar -->
+  <progress class="progress is-link" value="45" max="100">
+    45%
+  </progress>
+
+  <!-- File list -->
   <ul class="file-list">
-    <li *ngFor="let file of files; let i = index">
-      {{ file.name }}
-      <img [src]="file.preview" *ngIf="file.preview" width="50" height="50">
-      <button (click)="removeFile(i)">Remove</button>
+    <li *ngFor="let file of files; let i = index" class="box">
+      <div class="media">
+        <div class="media-left">
+          <figure class="image is-64x64" *ngIf="file.preview">
+            <img [src]="file.preview" alt="Preview">
+          </figure>
+        </div>
+        <div class="media-content">
+          <p class="title is-5">{{ file.name }}</p>
+        </div>
+        <div class="media-right">
+          <button class="button is-danger is-small" (click)="removeFile(i)">Remove</button>
+        </div>
+      </div>
     </li>
   </ul>
-  
-  <select [(ngModel)]="selectedOption">
-    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-  </select>
-  <button (click)="processFiles()">Process</button>
-  
+
+  <!-- Options dropdown and process button -->
+  <div class="field">
+    <div class="control">
+      <div class="select">
+        <select [(ngModel)]="selectedOption">
+          <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="process-button button is-link is-rounded" [ngClass]="true ? 'is-loading' : ''"
+    (click)="processFiles()">Process</button>
+</div>

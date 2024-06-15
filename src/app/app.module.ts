@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -9,8 +11,7 @@ import { TrainModelComponent } from './components/train-model/train-model.compon
 import { MainComponent } from './components/main/main.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { FormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { provideHttpClient } from '@angular/common/http';
         TrainModelComponent,
         MainComponent,
         NotFoundComponent,
-        FileUploadComponent
+        FileUploadComponent,
+        TableComponent
     ],
     imports: [
         BrowserModule,

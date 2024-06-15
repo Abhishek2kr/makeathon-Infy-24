@@ -1,13 +1,28 @@
-<nav>
-    <ul>
-        <li>
-            <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-        </li>
-        <li>
-            <a routerLink="./train-model" routerLinkActive="active" ariaCurrentWhenActive="page">Train Model</a>
-        </li>
-        <li>
-            <a routerLink="./extract-template" routerLinkActive="active" ariaCurrentWhenActive="page">Extract Template</a>
-        </li>
-    </ul>
-</nav>
+<div class="hero-head">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+            <!-- Toggler/collapsing button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenuHeroA"
+                aria-controls="navbarMenuHeroA" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenuHeroA">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                            class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="./train-model" routerLinkActive="active" class="nav-link">Train Model</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="./extract-template" routerLinkActive="active" class="nav-link">Extract
+                            Template</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

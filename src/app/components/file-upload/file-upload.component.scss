@@ -1,0 +1,22 @@
+.dropzone {
+  border: 2px dashed lightblue;
+  border-radius: 10px;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+}
+
+.file-list li {
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.process-button {
+  width: 200px;
+}

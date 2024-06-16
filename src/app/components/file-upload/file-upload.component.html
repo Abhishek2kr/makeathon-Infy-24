@@ -15,19 +15,17 @@
 
   <!-- File list -->
   <ul class="file-list">
-    <li *ngFor="let file of files; let i = index" class="box">
-      <div class="media">
-        <div class="media-left">
-          <figure class="image is-64x64" *ngIf="file.preview">
-            <img [src]="file.preview" alt="Preview">
-          </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-5">{{ file.name }}</p>
-        </div>
-        <div class="media-right">
-          <button class="button is-danger is-small" (click)="removeFile(i)">Remove</button>
-        </div>
+    <li *ngFor="let file of files; let i = index" class="box media">
+      <div class="media-left">
+        <figure class="image is-64x64" *ngIf="file.preview">
+          <img [src]="file.preview" alt="Preview">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-5">{{ file.name }}</p>
+      </div>
+      <div class="media-right">
+        <button class="button is-danger is-small" (click)="removeFile(i)">Remove</button>
       </div>
     </li>
   </ul>

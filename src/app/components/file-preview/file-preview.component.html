@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h3 class="title is-3">File Preview</h3>
+    <div class="file-list">
+        <ul class="list-group">
+            <li *ngFor="let file of files; let i = index"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="file-info d-flex align-items-center">
+                    <img [src]="file.preview" *ngIf="file.preview" class="img-thumbnail mr-2" width="50" height="50">
+                    <span>{{ file.file.name }}</span>
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-sm m-2" (click)="downloadFile(file)">
+                        <i class="bi bi-download"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm" (click)="removeFile(i)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

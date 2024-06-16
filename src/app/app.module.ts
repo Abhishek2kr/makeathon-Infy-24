@@ -12,6 +12,7 @@ import { MainComponent } from './components/main/main.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { TableComponent } from './components/table/table.component';
+import { FilePreviewComponent } from './components/file-preview/file-preview.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { TableComponent } from './components/table/table.component';
         MainComponent,
         NotFoundComponent,
         FileUploadComponent,
-        TableComponent
+        TableComponent,
+        FilePreviewComponent,
     ],
     imports: [
         BrowserModule,
